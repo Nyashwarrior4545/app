@@ -23,6 +23,11 @@ const productSchema = mongoose.Schema(
       required: [true, "Please add a category"],
       trim: true,
     },
+    status: {
+      type: String,
+      required: [true, "Please add a status"],
+      trim: true,
+    },
     quantity: {
       type: String,
       required: [true, "Please add a quantity"],

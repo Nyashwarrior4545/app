@@ -1,3 +1,5 @@
+//server.js
+
 const dotenv = require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -30,6 +32,10 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/contactus", contactRoute);
+app.use("/bulk", require("./controllers/bulk.controller"));
+app.use("/upload", require("./routes/upload"));
+app.use("/api/v1", require("./routes/router"));
+
 
 // Routes
 app.get("/", (req, res) => {

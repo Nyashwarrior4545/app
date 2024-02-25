@@ -1,0 +1,122 @@
+/* export.scss */
+body {
+  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.right_result {
+    height: 250px;
+    overflow: auto;
+    color: black;
+}
+.header{
+    font-weight: bold;
+    color: black;
+
+}
+
+.rows{
+
+    text-align: left;
+}
+
+.text{
+    color: black;
+    
+
+}
+
+header,td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+
+.refresh{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;  
+}
+.mt-4{
+    color: black;
+}
+.remove-button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    text-align: center;
+    cursor: pointer;  
+}
+
+/* export.scss */
+
+/* Add your existing styles */
+
+/* Style for the "Choose File" button */
+.upload {
+    background-color: #4caf50; /* Green background color */
+    color: white; /* White text color */
+    padding: 9.5px 14px; /* Padding */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-right: 30px;
+  }
+  
+  .upload:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.custom-file-upload {
+    display: block;
+    margin-top: 10px;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    padding: 1rem 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 10px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }

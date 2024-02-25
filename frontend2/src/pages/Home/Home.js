@@ -16,7 +16,7 @@ const Home = () => {
         <ul className="home-links">
           <ShowOnLogout>
             <li>
-              <Link to="/register">Register</Link>
+              <Link to="/register">sing up</Link>
             </li>
           </ShowOnLogout>
           <ShowOnLogout>

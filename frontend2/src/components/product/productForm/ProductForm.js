@@ -1,3 +1,5 @@
+//ProductForm.js
+
 import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -41,25 +43,57 @@ const ProductForm = ({
           <label>Request Name:</label>
           <input
             type="text"
-            placeholder="Product name"
+            placeholder="Request name"
             name="name"
             value={product?.name}
             onChange={handleInputChange}
           />
 
           <label>Request Category:</label>
-          <input
+          <select
+
             type="text"
             placeholder="Product Category"
             name="category"
             value={product?.category}
             onChange={handleInputChange}
-          />
+          >
+            <option value="">Select a Category</option>
+            <option value="Process Safety">Process Safety</option>
+            <option value="Environment">Environment</option>
+            <option value="Safety">Safety</option>
+            <option value="Accident">Accident</option>
+            <option value="Complaint">Complaint</option>
+            <option value="Loss">Loss</option>
+            <option value="Over £100,000">Over £100,000</option>
+            <option value="Health">Health</option>
+            <option value="HR">HR</option>
+            <option value="Expenses">Expenses</option>
+            <option value="Overtime">Overtime</option>
+            <option value="Holiday">Holiday</option>
+          </select>
+
+          <label>Request Status:</label>
+          <select
+
+            type="text"
+            placeholder="status"
+            name="status"
+            value={product?.status}
+            onChange={handleInputChange}
+          >
+            <option value="">Select status</option>
+            <option value="Open">Open</option>
+            <option value="Awaiting Approval">Awaiting Approval</option>
+            <option value="Approval">Approval</option>
+            <option value="Completed">Completed</option>
+            <option value="Closed">Closed</option>
+          </select>
 
           <label>Request Price:</label>
           <input
             type="text"
-            placeholder="Product Price"
+            placeholder="Request Price"
             name="price"
             value={product?.price}
             onChange={handleInputChange}
@@ -68,7 +102,7 @@ const ProductForm = ({
           <label>Request Quantity:</label>
           <input
             type="text"
-            placeholder="Product Quantity"
+            placeholder="Request Quantity"
             name="quantity"
             value={product?.quantity}
             onChange={handleInputChange}

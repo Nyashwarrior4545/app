@@ -1,3 +1,5 @@
+//ProductSummary.js
+
 import React, { useEffect } from "react";
 import "./ProductSummary.scss";
 import { AiFillDollarCircle } from "react-icons/ai";

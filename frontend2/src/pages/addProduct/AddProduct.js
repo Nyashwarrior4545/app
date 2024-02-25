@@ -25,7 +25,7 @@ const AddProduct = () => {
 
   const isLoading = useSelector(selectIsLoading);
 
-  const { name, category, price, quantity } = product;
+  const { name, category, status, price, quantity } = product;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -50,6 +50,7 @@ const AddProduct = () => {
     formData.append("name", name);
     formData.append("sku", generateKSKU(category));
     formData.append("category", category);
+    formData.append("status", status);
     formData.append("quantity", Number(quantity));
     formData.append("price", price);
     formData.append("description", description);

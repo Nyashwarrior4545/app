@@ -20,6 +20,7 @@ import EditProduct from "./pages/editProduct/EditProduct";
 import Profile from "./pages/profile/Profile";
 import EditProfile from "./pages/profile/EditProfile";
 import Contact from "./pages/contact/Contact";
+import Export from "./pages/Export/export";
 
 axios.defaults.withCredentials = true;
 
@@ -114,6 +115,17 @@ function App() {
             </Sidebar>
           }
         />
+        <Route
+          path="/export-request"
+          element={
+            <Sidebar>
+              <Layout>
+                <Export />
+              </Layout>
+            </Sidebar>
+          }
+        />
+        
       </Routes>
     </BrowserRouter>
   );

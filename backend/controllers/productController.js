@@ -1,3 +1,5 @@
+//productController.js
+
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/productModel");
 const { fileSizeFormatter } = require("../utils/fileUpload");
@@ -12,10 +14,10 @@ cloudinary.v2.config({
 });
 // Create Prouct
 const createProduct = asyncHandler(async (req, res) => {
-  const { name, sku, category, quantity, price, description } = req.body;
+  const { name, sku, category, status, quantity, price, description } = req.body;
 
   //   Validation
-  if (!name || !category || !quantity || !price || !description) {
+  if (!name || !category || !status || !quantity || !price || !description) {
     res.status(400);
     throw new Error("Please fill in all fields");
   }
@@ -49,6 +51,7 @@ const createProduct = asyncHandler(async (req, res) => {
     name,
     sku,
     category,
+    status,
     quantity,
     price,
     description,
@@ -99,7 +102,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
 // Update Product
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, category, quantity, price, description } = req.body;
+  const { name, category, status, quantity, price, description } = req.body;
   const { id } = req.params;
 
   const product = await Product.findById(id);
@@ -144,6 +147,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     {
       name,
       category,
+      status,
       quantity,
       price,
       description,

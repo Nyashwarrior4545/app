@@ -1,4 +1,7 @@
-import React, { useEffect } from "react";
+//ProductDetail.js
+
+
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import useRedirectLoggedOutUser from "../../../customHook/useRedirectLoggedOutUser";
@@ -8,6 +11,7 @@ import Card from "../../card/Card";
 import { SpinnerImg } from "../../loader/Loader";
 import "./ProductDetail.scss";
 import DOMPurify from "dompurify";
+import axios from "axios";
 
 const ProductDetail = () => {
   useRedirectLoggedOutUser("/login");
@@ -19,6 +23,9 @@ const ProductDetail = () => {
   const { product, isLoading, isError, message } = useSelector(
     (state) => state.product
   );
+
+  // State to store the selected products for sending
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
   const stockStatus = (quantity) => {
     if (quantity > 0) {
@@ -36,6 +43,33 @@ const ProductDetail = () => {
       console.log(message);
     }
   }, [isLoggedIn, isError, message, dispatch]);
+
+  // Function to handle sending the product list
+  const sendProductList = async () => {
+    try {
+      // Assuming you have the backend URL in your environment variables
+      const backendURL = process.env.REACT_APP_BACKEND_URL;
+
+      // Replace 'recipientUserId' with the actual recipient's user ID
+      const recipientUserId = 'recipientUserId';
+
+      // Make a POST request to your backend endpoint
+      const response = await axios.post(
+        `${backendURL}/api/products/${id}/share`,
+        {
+          recipientUserId,
+          products: selectedProducts,
+        }
+      );
+
+      // Handle success or show a notification to the user
+      console.log('Product list sent successfully!', response.data);
+    } catch (error) {
+      // Handle error
+      console.error('Error sending product list:', error.message);
+    }
+  };
+
 
   return (
     <div className="product-detail">
@@ -66,6 +100,9 @@ const ProductDetail = () => {
               <b>&rarr; Category : </b> {product.category}
             </p>
             <p>
+              <b>&rarr; Status : </b> {product.status}
+            </p>
+            <p>
               <b>&rarr; Price : </b> {"$"}
               {product.price}
             </p>
@@ -90,6 +127,8 @@ const ProductDetail = () => {
             <code className="--color-dark">
               Last Updated: {product.updatedAt.toLocaleString("en-US")}
             </code>
+            {/* Button to trigger sending the product list */}
+            <button onClick={sendProductList}>Send Product List</button>
           </div>
         )}
       </Card>
@@ -98,3 +137,5 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+

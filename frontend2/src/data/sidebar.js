@@ -1,5 +1,7 @@
 import { FaTh, FaRegChartBar, FaCommentAlt } from "react-icons/fa";
-import { BiImageAdd } from "react-icons/bi";
+import { BiImageAdd, BiCloudUpload } from "react-icons/bi";
+
+
 
 const menu = [
   {
@@ -30,6 +32,11 @@ const menu = [
     title: "Report Bug",
     icon: <FaCommentAlt />,
     path: "/contact-us",
+  },
+  {
+    title: "Export Request",
+    icon: <BiCloudUpload />, // Use the BiCloudUpload icon for the upload effect
+    path: "/export-request",
   },
 ];
 

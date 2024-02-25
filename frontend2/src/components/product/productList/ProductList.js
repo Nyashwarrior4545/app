@@ -1,3 +1,5 @@
+//ProductList.js
+
 import React, { useEffect, useState } from "react";
 import { SpinnerImg } from "../../loader/Loader";
 import "./productList.scss";
@@ -106,6 +108,7 @@ const ProductList = ({ products, isLoading }) => {
                   <th>s/n</th>
                   <th>Name</th>
                   <th>Category</th>
+                  <th>Status</th>
                   <th>Price</th>
                   <th>Quantity</th>
                   <th>Value</th>
@@ -115,12 +118,13 @@ const ProductList = ({ products, isLoading }) => {
 
               <tbody>
                 {currentItems.map((product, index) => {
-                  const { _id, name, category, price, quantity } = product;
+                  const { _id, name, category,status, price, quantity } = product;
                   return (
                     <tr key={_id}>
                       <td>{index + 1}</td>
                       <td>{shortenText(name, 16)}</td>
                       <td>{category}</td>
+                      <td>{status}</td>
                       <td>
                         {"$"}
                         {price}
